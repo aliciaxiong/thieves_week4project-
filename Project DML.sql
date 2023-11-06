@@ -1,109 +1,40 @@
--- SERVICES LIST 
-INSERT INTO (services list
-    service_name,
-    service_cost,
-) VALUES (
-    'tire rotation',
-    '$0.00'
+--customer profiles 
+INSERT INTO customer profiles (
+    customer_firstname,
+    customer_lastname,
+    customer_phonenumber,
+    profile_notes
+) VALUES(
+    'Frank'
+    'Delosa'
+    '550-342-6563'
+    'purchased vehicle'
 ) (
-    'oil change',
-    '$60-$100'
+    'Christina'
+    'Love'
+    '324-452-4552'
+    'purchased vehicle'
 ) (
-    'a/c racharge services',
-    '$50-$250'
+    'Michelle'
+    'Jackman'
+    '344-567-3312'
+    'purchased vehicle'
 ) (
-    'battery replacement',
-    '$45-$300'
+    'Leo'
+    'Guzz'
+    '909-432-5455'
+    'car service'
 ) (
-    'alternator belt replacement',
-    '$70-$200'
+    'Freya'
+    'Lapsti'
+    '245-213-4422'
+    'car service'
 ) (
-    'timing belt replacement',
-    '$300-$1,000'
-) (
-    'clutch replacement',
-    '$1,200-$1,400'
-) (
-    'starter motor replacement',
-    '$150-$1,100+'
-) (
-    'water pump replacement',
-    '$200-$700'
-) (
-    'brake pad replacement',
-    '$100-$300'
-) (
-    'diagnostic inspection',
-    '$20-$500'
-) (
-    'car routine maintenance'
-    '$50-$200'
-) 
+    'Grant'
+    'Lowsey'
+    '787-340-1000'
+    'car service'
 
--- SERVICE EMPLOYEES 
-INSERT INTO (services employees
-    employee_firstname,
-    employee_lastname,
-    employee_dob,
-    employee_phonenumber
-) VALUES (
-    'Chris',
-    'Garfield',
-    '01/03/1978',
-    '345-233-1233'
-) (
-    'Naomi',
-    'Frite',
-    '04/23/1987',
-    '563-674-2352'
-)  (
-    'John',
-    'Etrimist',
-    '02/29/1990',
-    '313-567-9239'
-) (
-    'Patrick',
-    'Linder',
-    '06/06/1991',
-    '909-234-2323'
-) (
-    'Justin',
-    'Hong',
-    '09/19/1986',
-    '566-344-7646'
-)
-
---sales employees 
-INSERT INTO (sales employees
-    employee_firstname,
-    employee_lastname,
-    employee_dob,
-    employee_phonenumber
-) VALUES (
-    'Shannon'
-    'Mcneal'
-    '05/23/2000'
-    '673-563-5632'
-) (
-    'Leanne'
-    'Shantell'
-    '05/01/1988'
-    '353-676-2311'
-) (
-    'William'
-    'Nicks'
-    '07/23/1985'
-    '980-389-4321'
-) (
-    'Harold'
-    'Hepplemen'
-    '11/20/1980'
-    '653-453-2134'
-) (
-    'Michael',
-    'Showman',
-    '10/10/1980',
-    '877-564-3456'
 )
 
 -- vehicle information
@@ -156,55 +87,218 @@ INSERT INTO (vehicle information
     'black',
     'sedan',
     '67832'
-) (
-    'ford',
-    'f-150',
-    '2023',
-    'black',
-    'truck',
-    '87334'
-) (
-    'toyota',
-    'tacoma',
-    '2023',
-    'orange',
-    'truck',
-    '23312'
-) (
-    'toyota',
-    'corolla',
-    '2023',
-    'white',
-    'sedan',
-    '50603'
-) (
-    'hyundai',
-    'tuscon',
-    '2022',
-    'gray',
-    'suv',
-    '08723'
-) (
-    'honda',
-    'civic si',
-    '2022',
-    'red',
-    'sedan',
-    '09823'
 )
 
-INSERT INTO (services ticket
-    mechanic_id,
+-- vehicle purchase agreement 
+INSERT INTO vehicle purchase agreement (
+    pruchase_agreement_id,
+    customer_id,
+    employee_id,
+    vehicle_id,
+    purchase_amount
+) VALUES (
+    'customer id',
+    FOREIGN KEY (customer_id),
+    'employee_id'
+    FOREIGN KEY (employee_id),
+    'vehicle_id'
+    FOREIGN KEY (vehicle_id),
+    '$50,000'
+) (
+    'customer id',
+    FOREIGN KEY (customer_id),
+    'employee_id'
+    FOREIGN KEY (employee_id),
+    'vehicle_id'
+    FOREIGN KEY (vehicle_id),
+    '$50,000'
+) (
+    'customer id',
+    FOREIGN KEY (customer_id),
+    'employee_id'
+    FOREIGN KEY (employee_id),
+    'vehicle_id'
+    FOREIGN KEY (vehicle_id),
+    '$50,000'
+) (
+    'customer id',
+    FOREIGN KEY (customer_id),
+    'employee_id'
+    FOREIGN KEY (employee_id),
+    'vehicle_id'
+    FOREIGN KEY (vehicle_id),
+    '$0.00'
+) (
+    'customer id',
+    FOREIGN KEY (customer_id),
+    'employee_id'
+    FOREIGN KEY (employee_id),
+    'vehicle_id'
+    FOREIGN KEY (vehicle_id),
+    '$0.00'
+)
+
+
+---service tickets 
+CREATE TABLE services ticket(
+    mechanic_id ,
     vehicle_information, 
     service_id,
-    customer_id
+    customer_id, 
+    total_amount_charge
 ) VALUES (
-    'mechanic_id',
-    FOREIGN KEY (mechanic_id)
-    'vehicle_information',
-    FOREIGN KEY (vehicle_id)
+    'mechanic_id'
+    FOREIGN KEY (mechanic_id),
+    'vehicle_information'
+    FOREIGN KEY (vehicle_information),
     'service_id',
-    FOREIGN KEY (ticket_id)
+    FOREIGN KEY (service_id),
     'customer_id',
-    FOREIGN KEY (customer_id)
+    FOREIGN KEY (customer_id),
+    '$250.00'
+) (
+    'mechanic_id'
+    FOREIGN KEY (mechanic_id),
+    'vehicle_information'
+    FOREIGN KEY (vehicle_information),
+    'service_id',
+    FOREIGN KEY (service_id),
+    'customer_id',
+    FOREIGN KEY (customer_id),
+    '$3000.00'
+) (
+    'mechanic_id'
+    FOREIGN KEY (mechanic_id),
+    'vehicle_information'
+    FOREIGN KEY (vehicle_information),
+    'service_id',
+    FOREIGN KEY (service_id),
+    'customer_id',
+    FOREIGN KEY (customer_id),
+    '$560.00'
+) (
+    'mechanic_id'
+    FOREIGN KEY (mechanic_id),
+    'vehicle_information'
+    FOREIGN KEY (vehicle_information),
+    'service_id',
+    FOREIGN KEY (service_id),
+    'customer_id',
+    FOREIGN KEY (customer_id),
+    '$343.00'
+) (
+    'mechanic_id'
+    FOREIGN KEY (mechanic_id),
+    'vehicle_information'
+    FOREIGN KEY (vehicle_information),
+    'service_id',
+    FOREIGN KEY (service_id),
+    'customer_id',
+    FOREIGN KEY (customer_id),
+    '$1200.00'
 )
+
+
+
+-- SERVICES LIST 
+INSERT INTO (services list
+    service_name,
+    service_cost,
+) VALUES (
+    'tire rotation',
+    '$0.00'
+) (
+    'oil change',
+    '$60-$100'
+) (
+    'a/c racharge services',
+    '$50-$250'
+) (
+    'battery replacement',
+    '$45-$300'
+) (
+    'alternator belt replacement',
+    '$70-$200'
+) (
+    'timing belt replacement',
+    '$300-$1,000'
+) (
+    'clutch replacement',
+    '$1,200-$1,400'
+) (
+    'starter motor replacement',
+    '$150-$1,100+'
+) (
+    'water pump replacement',
+    '$200-$700'
+) (
+    'brake pad replacement',
+    '$100-$300'
+) (
+    'diagnostic inspection',
+    '$20-$500'
+) (
+    'car routine maintenance'
+    '$50-$200'
+);
+
+-- SERVICE EMPLOYEES 
+INSERT INTO (services employees
+    employee_firstname,
+    employee_lastname,
+    employee_dob,
+    employee_phonenumber
+) VALUES (
+    'Chris',
+    'Garfield',
+    '01/03/1978',
+    '345-233-1233'
+) (
+    'Naomi',
+    'Frite',
+    '04/23/1987',
+    '563-674-2352'
+)  (
+    'John',
+    'Etrimist',
+    '02/29/1990',
+    '313-567-9239'
+) (
+    'Patrick',
+    'Linder',
+    '06/06/1991',
+    '909-234-2323'
+) (
+    'Justin',
+    'Hong',
+    '09/19/1986',
+    '566-344-7646'
+);
+
+--sales employees 
+INSERT INTO (sales employees
+    employee_firstname,
+    employee_lastname,
+    employee_dob,
+    employee_phonenumber
+) VALUES (
+    'Shannon'
+    'Mcneal'
+    '05/23/2000'
+    '673-563-5632'
+) (
+    'Leanne'
+    'Shantell'
+    '05/01/1988'
+    '353-676-2311'
+) (
+    'William'
+    'Nicks'
+    '07/23/1985'
+    '980-389-4321'
+) (
+    'Harold'
+    'Hepplemen'
+    '11/20/1980'
+    '653-453-2134'
+);

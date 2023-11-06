@@ -71,12 +71,7 @@ INSERT INTO (services employees
     'Hong',
     '09/19/1986',
     '566-344-7646'
-) (
-    'Mino',
-    'Lee',
-    '10/15/1982',
-    '989-234-5442'
-) 
+)
 
 --sales employees 
 INSERT INTO (sales employees
@@ -109,9 +104,91 @@ INSERT INTO (sales employees
     'Showman',
     '10/10/1980',
     '877-564-3456'
+)
+
+-- vehicle ifnormation
+INSERT INTO (vehicle information
+    make,
+    model,
+    year,
+    color,
+    style,
+    last_five_vin
+) VALUES(
+    'tesla'
+    '3'
+    '2022'
+    'white'
+    'sedan'
+    '32421'
 ) (
-    'Hunter',
-    'Dale',
-    '04/13/2000',
-    '343-342-6566'
+    'tesla'
+    'x'
+    '2023'
+    'blue'
+    'suv'
+    '74325'
+) (
+    'toyota'
+    'camry'
+    '2009'
+    'green'
+    'sedan'
+    '39183'
+) (
+    'lexus'
+    'is 250'
+    '2009'
+    'white'
+    'sedan'
+    '48205'
+) (
+    'honda'
+    'pilot'
+    '2020'
+    'white'
+    'suv'
+    '79021'
+) (
+    'honda'
+    'civic si'
+    '2021'
+    'black'
+    'sedan'
+    '67832'
+) (
+    'ford'
+    'f-150'
+    '2023'
+    'black'
+    'truck'
+    '87334'
+) (
+    'toyota'
+    'tacoma'
+    '2023'
+    'orange'
+    'truck'
+    '23312'
+) (
+    'toyota'
+    'corolla'
+    '2023'
+    'white'
+    'sedan'
+    '50603'
+) (
+    'hyundai'
+    'tuscon'
+    '2022'
+    'gray'
+    'suv'
+    '08723'
+) (
+    'honda'
+    'civic si'
+    '2022'
+    'red'
+    'sedan'
+    '09823'
 )

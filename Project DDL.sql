@@ -40,8 +40,8 @@ CREATE TABLE vehicle information(
     year INTEGER,
     color VARCHAR,
     style VARCHAR
-    VIN_DIGIT INTEGER
-);
+    last_five_vin INTEGER
+); --finish dml
 
 CREATE TABLE vehicle purchase agreement (
     pruchase_agreement_id SERIAL PRIMARY KEY, 
@@ -49,10 +49,10 @@ CREATE TABLE vehicle purchase agreement (
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
     employee_id INTEGER, 
     FOREIGN KEY (employee_id) REFERENCES services employees(employee_id),
-    vehicle_information INTEGER,
+    vehicle_id INTEGER,
     FOREIGN KEY (vehicle_id) REFERENCES vehicle information(vehicle_id),
     purchase_amount VARCHAR
-);
+); 
 
 CREATE TABLE customer profiles (
     customer_id SERIAL PRIMARY KEY, 

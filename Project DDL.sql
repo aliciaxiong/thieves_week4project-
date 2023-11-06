@@ -14,7 +14,6 @@ CREATE TABLE services ticket(
     FOREIGN KEY service_id REFERENCES services list(service_id)
     customer_id INTEGER, 
     FOREIGN KEY customer_id REFERENCES customer(customer_id)
-    total_amount_charge VARCHAR
 );
 
 CREATE TABLE sales employees(

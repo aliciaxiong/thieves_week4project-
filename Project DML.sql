@@ -106,7 +106,7 @@ INSERT INTO (sales employees
     '877-564-3456'
 )
 
--- vehicle ifnormation
+-- vehicle information
 INSERT INTO (vehicle information
     make,
     model,
@@ -115,80 +115,96 @@ INSERT INTO (vehicle information
     style,
     last_five_vin
 ) VALUES(
-    'tesla'
-    '3'
-    '2022'
-    'white'
-    'sedan'
+    'tesla',
+    '3',
+    '2022',
+    'white',
+    'sedan',
     '32421'
 ) (
-    'tesla'
-    'x'
-    '2023'
-    'blue'
-    'suv'
+    'tesla',
+    'x',
+    '2023',
+    'blue',
+    'suv',
     '74325'
 ) (
-    'toyota'
-    'camry'
-    '2009'
-    'green'
-    'sedan'
+    'toyota',
+    'camry',
+    '2009',
+    'green',
+    'sedan',
     '39183'
 ) (
-    'lexus'
-    'is 250'
-    '2009'
-    'white'
-    'sedan'
+    'lexus',
+    'is 250',
+    '2009',
+    'white',
+    'sedan',
     '48205'
 ) (
-    'honda'
-    'pilot'
-    '2020'
-    'white'
-    'suv'
+    'honda',
+    'pilot',
+    '2020',
+    'white',
+    'suv',
     '79021'
 ) (
-    'honda'
-    'civic si'
-    '2021'
-    'black'
-    'sedan'
+    'honda',
+    'civic si',
+    '2021',
+    'black',
+    'sedan',
     '67832'
 ) (
-    'ford'
-    'f-150'
-    '2023'
-    'black'
-    'truck'
+    'ford',
+    'f-150',
+    '2023',
+    'black',
+    'truck',
     '87334'
 ) (
-    'toyota'
-    'tacoma'
-    '2023'
-    'orange'
-    'truck'
+    'toyota',
+    'tacoma',
+    '2023',
+    'orange',
+    'truck',
     '23312'
 ) (
-    'toyota'
-    'corolla'
-    '2023'
-    'white'
-    'sedan'
+    'toyota',
+    'corolla',
+    '2023',
+    'white',
+    'sedan',
     '50603'
 ) (
-    'hyundai'
-    'tuscon'
-    '2022'
-    'gray'
-    'suv'
+    'hyundai',
+    'tuscon',
+    '2022',
+    'gray',
+    'suv',
     '08723'
 ) (
-    'honda'
-    'civic si'
-    '2022'
-    'red'
-    'sedan'
+    'honda',
+    'civic si',
+    '2022',
+    'red',
+    'sedan',
     '09823'
+)
+
+INSERT INTO (services ticket
+    mechanic_id,
+    vehicle_information, 
+    service_id,
+    customer_id
+) VALUES (
+    'mechanic_id',
+    FOREIGN KEY (mechanic_id)
+    'vehicle_information',
+    FOREIGN KEY (vehicle_id)
+    'service_id',
+    FOREIGN KEY (ticket_id)
+    'customer_id',
+    FOREIGN KEY (customer_id)
 )
